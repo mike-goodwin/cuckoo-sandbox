@@ -22,9 +22,13 @@
 
 # Checkout, build and  pyssdeep
 
+log 'installing pyssdeep...'
+
 execute 'checkout pyssdeep' do
   command 'svn checkout http://pyssdeep.googlecode.com/svn/trunk/ /tmp/pyssdeep'
 end
+
+log 'pyssdeep checkout completed'
 
 execute 'build pyssdeep' do
   cwd '/tmp/pyssdeep'
@@ -32,10 +36,15 @@ execute 'build pyssdeep' do
   user 'root'
 end
 
+log 'pyssdeep build completed'
+
 execute 'install pyssdeep' do
   cwd '/tmp/pyssdeep'
   command 'python /tmp/pyssdeep/setup.py install'
   user 'root'
 end
 
-log 'pyssdeep downloaded and installed'
+log 'pyssdeep installation completed'
+
+
+
