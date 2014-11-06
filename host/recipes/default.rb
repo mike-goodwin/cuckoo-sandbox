@@ -20,6 +20,9 @@
 # NB: This is under construction and does not work yet!
 #
 
+package 'libfuzzy-dev' # required for pyssdeep build
+package 'python-pyrex' # required for pyssdeep installation  
+
 # Checkout, build and  pyssdeep
 
 execute 'checkout pyssdeep' do
